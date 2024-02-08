@@ -1,0 +1,197 @@
+html {
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #070708; /* Sfondo blu */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.login-container {
+    margin-top: 85px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    height: 450px;; /* Dimensione fissa */
+    width: 250px;
+    text-align: center;
+}
+
+label {
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold; /* Testo in grassetto */
+}
+
+.input-login {
+    width: 250px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px; /* Bordi più arrotondati */
+    border-width: 1px; /* Spessore del bordo */
+    border-style: solid; /* Tipo di bordo */
+}
+.input-login[aria-invalid="true"] {
+    border-color: red;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-login {
+    width: 100%;
+    padding: 10px;
+    background-color: #070708; /* Colore del pulsante */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 45px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.forgot-password {
+    margin-top: 60px;
+    color: #525252;
+    font-size: 16px;
+}
+
+.forgot-password a{
+    text-decoration: underline; /* Sottolineato */
+    color: #525252; /* Colore del link */
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.text-center {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-forgot-password {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.forgot-password-container {
+    height: 430px;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    width: 260px;
+    text-align: center;
+}
+
+.label-forgot-password {
+    margin-top: 30px;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.h2-forgot-password {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+.p-forgot-password {
+    margin-bottom: 40px;
+}
+
+.input-forgot-password {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 30px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #767676;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.button-forgot-password {
+    width: 100%;
+    padding: 10px;
+    background-color: #070708;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.a-forgot-password {
+    text-decoration: none;
+    color: #070708;
+    border-bottom: 1px solid #070708;
+}
+
+.a-forgot-password:hover {
+    color: #070708;
+    border-bottom-color: #070708;
+}
+.visibility {
+    position: relative;
+    left: 13rem;
+    top: 60px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.54;
+    border: none;
+    z-index: 100;
+}
+.invalid-input {
+    font-size: 13px;
+    color: red;
+}
+
+@media screen and (max-width: 600px) {
+
+    body {
+        align-items: stretch;
+        overflow-y: scroll;
+        height: fit-content;
+    }
+
+    .login-container {
+        height: fit-content;
+        margin: 100px auto; /* Centra il contenitore */
+    }
+
+    .logo {
+        top: 2rem;
+        text-align: center;
+    }
+
+    .forgot-password-container {
+        max-width: 300px;
+        margin-bottom: 115px;
+    }
+
+    .logo-forgot-password {
+        text-align: center;
+    }
+
+}
+
+    

@@ -1,0 +1,38 @@
+version: '3'
+volumes:
+  keycloak-data:
+    driver: local
+services:
+  postgres:
+    image: postgres:latest
+    volumes:
+      - keycloak-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: my_keycloak
+      POSTGRES_PASSWORD: My863Keycloak
+
+  keycloak:
+    build: .
+    container_name: login-APA
+    environment:
+      KC_HOSTNAME_STRICT: 'false'
+      KC_HOSTNAME_STRICT_HTTPS: 'false'
+      KC_HTTP_ENABLED: 'true'
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: TwentyPw1!
+      KC_HEALTH_ENABLED: 'true'
+      KC_METRICS_ENABLED: 'true'
+      KC_HOSTNAME: localhost
+      PROXY_ADDRESS_FORWARDING: "true"
+
+    command:
+      - "-v"
+      - "start"
+      - "--optimized"
+    ports:
+      - "8080:8080"
+      - "8443:8443"
+    depends_on:
+      - postgres
+
