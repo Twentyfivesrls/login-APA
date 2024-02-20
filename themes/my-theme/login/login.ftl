@@ -42,29 +42,30 @@
                     <h2>Login</h2>
                     <label for="username">Email</label>
                     <input class="input-login" type="text" id="username" placeholder="${msg("Email")}" name="username" tabindex="1" autofocus autocomplete="off"
-                           aria-invalid="<#if messagesPerField.existsError('username', 'password')>true</#if>">
-                    <#if messagesPerField.existsError('username','password')>
+                           aria-invalid="<#if messagesPerField.existsError('email', 'password')>true</#if>">
+                    <#if messagesPerField.existsError('email','password')>
                         <span id="input-error" class="invalid-input" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
+                                    ${kcSanitize(messagesPerField.getFirstError('email','password'))?no_esc}
                             </span>
                     </#if>
                     <div>
                         <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
                     </div>
                         <label for="password">Password</label>
-                        <input class="input-login" type="password" id="password" placeholder="${msg("Password")}" name="password" tabindex="2"utofocus autocomplete="off"
+                        <input class="input-login" type="password" id="password" placeholder="${msg("Password")}" name="password" tabindex="2" autofocus autocomplete="off"
                                aria-invalid="<#if messagesPerField.existsError('username', 'password')>true</#if>">
                     <div class="forgot-password">
                         <#if realm.resetPasswordAllowed>
-                            <p>
-                                <a href="${(url.loginResetCredentialsUrl)}" id="forgot-password-link">Hai dimenticato la password?</a>
-                            </p>
+                            <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                         </#if>
                     </div>
                     <div>
                         <button type="submit" class="button-login">Accedi</button>
                     </div>
-
+                    <p class="create-account">
+                    <div id="kc-registration" style="display: inline-grid">
+                        Devi ancora registrarti? <a href="${url.registrationUrl}" style="color: #525252" id="create-account-link">Crea un account</a>
+                    </div>
                 </form>
             </div>
         </#if>

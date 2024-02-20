@@ -5,29 +5,53 @@ html {
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: 850px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #070708; /* Sfondo blu */
+    background-color: #6C6029;
     font-family: 'Montserrat', sans-serif;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .logo {
     position: absolute;
-    top: 2rem;
+    top: 4rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.register-logo {
+    position: absolute;
+    top: 1rem;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
 }
 
 .login-container {
-    margin-top: 85px;
+    margin-top: 30px;
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
     height: 450px;; /* Dimensione fissa */
     width: 250px;
+    text-align: center;
+}
+
+.form-container{
+    height: fit-content;
+    width: 295px;
+}
+
+.register-container {
+    margin-top: 120px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    height: 680px;; /* Dimensione fissa */
+    width: 295px;
     text-align: center;
 }
 
@@ -39,6 +63,7 @@ label {
 }
 
 .input-login {
+    border-color: #252525;
     width: 250px;
     padding: 10px;
     box-sizing: border-box;
@@ -46,7 +71,24 @@ label {
     border-width: 1px; /* Spessore del bordo */
     border-style: solid; /* Tipo di bordo */
 }
+
+.input-register {
+    border-color: #252525;
+    width: 295px;
+    padding: 7px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 4px; /* Bordi più arrotondati */
+    border-width: 1px; /* Spessore del bordo */
+    border-style: solid; /* Tipo di bordo */
+}
+
 .input-login[aria-invalid="true"] {
+    border-color: red;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-register[aria-invalid="true"] {
     border-color: red;
     font-family: 'Montserrat', sans-serif;
 }
@@ -54,27 +96,46 @@ label {
 .button-login {
     width: 100%;
     padding: 10px;
-    background-color: #070708; /* Colore del pulsante */
+    background-color: #CDBB6D; /* Colore del pulsante */
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin-top: 45px;
+    margin-top: 30px;
     margin-bottom: 15px;
     font-size: 16px;
 }
 
-.forgot-password {
-    margin-top: 60px;
+.button-register {
+    width: 100%;
+    padding: 10px;
+    background-color: #CDBB6D; /* Colore del pulsante */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.forgot-password,
+.create-account{
+    margin-top: 30px;
     color: #525252;
     font-size: 16px;
 }
 
-.forgot-password a{
+.forgot-password a,
+.create-account a{
     text-decoration: underline; /* Sottolineato */
     color: #525252; /* Colore del link */
     cursor: pointer;
     font-size: 16px;
+}
+
+.create-account {
+    color: #525252;
 }
 
 
@@ -84,27 +145,26 @@ label {
 }
 
 .logo-forgot-password {
-    position: absolute;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
+    position: absolute ;
+    top: 2rem ;
+    left: 50% ;
+    transform: translateX(-50%) ;
+    z-index: 2 ;
 }
 
-.forgot-password-container {
-    height: 430px;
-    margin-top: 10px;
-    background-color: #fff;
-    padding: 25px;
-    border-radius: 8px;
-    width: 260px;
-    text-align: center;
+.forgo-password-container {
+    margin-top: 10px ;
+    background-color: #fff ;
+    padding: 25px ;
+    border-radius: 8px ;
+    width: 260px ;
+    text-align: center ;
 }
 
 .label-forgot-password {
-    margin-top: 30px;
-    display: block;
-    text-align: left;
+    margin-top: 30px ;
+    display: block ;
+    text-align: left ;
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -131,13 +191,14 @@ label {
 .button-forgot-password {
     width: 100%;
     padding: 10px;
-    background-color: #070708;
+    background-color: #CDBB6D;
     color: #fff;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 40px;
     margin-top: 20px;
+    font-size: 16px;
 }
 
 .a-forgot-password {
@@ -152,17 +213,95 @@ label {
 }
 .visibility {
     position: relative;
-    left: 13rem;
-    top: 60px;
-    width: 24px;
+    left: -2rem;
+    top: 0.5rem;
+    width: 0px;
     height: 24px;
     opacity: 0.54;
     border: none;
     z-index: 100;
 }
+.visibility-register {
+    position: relative;
+    left: -2rem;
+    top: 0.2rem;
+    width: 0px;
+    height: 24px;
+    opacity: 0.54;
+    border: none;
+    z-index: 100;
+}
+
 .invalid-input {
     font-size: 13px;
     color: red;
+}
+
+.logo-update-update {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.update-password-container {
+    height: 470px;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 260px;
+    text-align: center;
+}
+
+.label-update-password {
+    margin-top: 30px;
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold; /* Testo in grassetto */
+}
+
+.h2-update-password {
+    font-size: 32px;
+}
+
+.p-update-password {
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.input-update-password {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 4px; /* Bordi più arrotondati */
+    border: 1px solid #060606; /* Bordo bianco */
+}
+
+.button-update-password {
+    width: 100%;
+    padding: 10px;
+    background-color: #CDBB6D; /* Colore del pulsante (blu scuro) */
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.a-update-password {
+    text-decoration: none;
+    color: #070708; /* Colore del link (blu) */
+    border-bottom: 1px solid #070708; /* Linea sottostante */
+}
+
+.a-update-password:hover {
+    color: #070708; /* Cambia colore al passaggio del mouse (blu scuro) */
+    border-bottom-color: #070708;
 }
 
 @media screen and (max-width: 600px) {
