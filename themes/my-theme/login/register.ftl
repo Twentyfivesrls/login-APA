@@ -108,7 +108,7 @@
                 <div style="display: flex">
                         <input type="password" id="password" class="input-register" placeholder="${msg("Password")}" name="password" autocomplete="new-password" aria-invalid="<#if messagesPerField.existsError('password')>true</#if>">
 
-                    <label class="visibility-register" id="v" onclick="togglePassword()">
+                    <label class="visibility" id="v" onclick="togglePassword()">
                         <img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
                 </div>
                 <#if messagesPerField.existsError('password','password-confirm')>
@@ -121,7 +121,7 @@
                     <div style="display: flex">
                     <input type="password" id="password-confirm" placeholder="${msg("Conferma Password")}" class="input-register" name="password-confirm" aria-invalid="<#if messagesPerField.existsError('password-confirm')>true</#if>">
 
-                    <label class="visibility-register" id="v-confirm" onclick="toggleConfirmPassword()">
+                    <label class="visibility" id="v-confirm" onclick="toggleConfirmPassword()">
                         <img id="vi-confirm" src="${url.resourcesPath}/img/eye-off.png">
                     </label>
                     </div>
