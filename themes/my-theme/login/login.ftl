@@ -40,23 +40,30 @@
         <div class="card" id="loginCard">
                 <form id="kc-form-login" class="form" onsubmit="return true;" action="${url.loginAction}" method="post">
                     <h2>Login</h2>
-                    <label for="username">Email</label>
+
+                    <label for="email">Email</label>
                     <input class="input-login" type="text" id="username" placeholder="${msg("Email")}" name="username" tabindex="1" autofocus autocomplete="off"
-                           aria-invalid="<#if messagesPerField.existsError('email', 'password')>true</#if>">
-                    <#if messagesPerField.existsError('email','password')>
+                           aria-invalid="<#if messagesPerField.existsError('username', 'password')>true</#if>">
+                    <#if messagesPerField.existsError('username','password')>
                         <span id="input-error" class="invalid-input" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.getFirstError('email','password'))?no_esc}
+                                    ${kcSanitize(messagesPerField.getFirstError('username','password'))?no_esc}
                             </span>
                     </#if>
-                    <div>
-                        <label class="visibility" id="v" onclick="togglePassword()"><img id="vi" src="${url.resourcesPath}/img/eye-off.png"></label>
-                    </div>
                         <label for="password">Password</label>
-                        <input class="input-login" type="password" id="password" placeholder="${msg("Password")}" name="password" tabindex="2" autofocus autocomplete="off"
-                               aria-invalid="<#if messagesPerField.existsError('username', 'password')>true</#if>">
-                    <div class="forgot-password">
+                    <div style="display: flex">
+                    <input class="input-login" type="password" id="password" placeholder="${msg("Password")}" name="password" tabindex="2" autofocus autocomplete="off"
+                               aria-invalid="<#if messagesPerField.existsError('username','password')>true</#if>">
+                        <label class="visibility" id="v" onclick="togglePassword()">
+                            <img id="vi" src="${url.resourcesPath}/img/eye-off.png">
+                        </label>
+                    </div>
+                    <#if messagesPerField.existsError('username','password')>
+                        <span id="input-error" class="invalid-input" aria-live="polite">
+                            </span>
+                    </#if>
+                        <div class="forgot-password">
                         <#if realm.resetPasswordAllowed>
-                            <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                            <span><a tabindex="5" href="${url.loginResetCredentialsUrl}">Hai dimenticato la password?</a></span>
                         </#if>
                     </div>
                     <div>
