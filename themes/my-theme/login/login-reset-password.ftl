@@ -21,7 +21,7 @@
                     <label class="label-forgot-password" for="email">Email</label>
                     <input type="text" id="email" name="email" placeholder="${msg("Inserisci la tua email")}" class="input-forgot-password" autofocus value="${(auth.attemptedUsername!'')}" aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"/>
                     <#if messagesPerField.existsError('email')>
-                        <span id="input-error-username" class="invalid-input" aria-live="polite">
+                        <span id="input-error" class="invalid-input" aria-live="polite">
                                     ${kcSanitize(messagesPerField.get('email'))?no_esc}
                         </span>
                     </#if>
