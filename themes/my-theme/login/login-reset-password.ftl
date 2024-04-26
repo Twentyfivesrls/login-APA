@@ -30,9 +30,8 @@
                     </#if>
                 </div>
             <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                <button class="button-forgot-password" type="submit">
+                <button class="button-forgot-password" type="submit" value="${msg("Invia")}"/>
                     Invia
-                </button>
             </div>
 
             <p class="create-account">
