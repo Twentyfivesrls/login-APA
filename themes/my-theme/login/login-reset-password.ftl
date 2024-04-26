@@ -6,7 +6,7 @@
 </#if>
 
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=true; section>
+<@layout.registrationLayout displayMessage=!messagesPerField.existsError('email'); section>
     <#if section = "header">
     <#elseif section = "form">
         <div class="forgo-password-container">
@@ -19,10 +19,10 @@
             <p class="p-forgot-password">Inserisci la mail associata al tuo account e riceverai un link per resettare la tua password</p>
                 <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon ${properties.kcLabelClass!} <#if usernameEditDisabled??>mdc-text-field--disabled</#if>">
                     <label class="label-forgot-password" for="email">Email</label>
-                    <input type="text" id="username" name="username" placeholder="${msg("Inserisci la tua email")}" class="input-forgot-password" autofocus value="${(auth.attemptedUsername!'')}" aria-invalid="<#if messagesPerField.existsError('username')>true</#if>"/>
-                    <#if messagesPerField.existsError('username')>
+                    <input type="text" id="username" name="username" placeholder="${msg("Inserisci la tua email")}" class="input-forgot-password" autofocus value="${(auth.attemptedUsername!'')}" aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"/>
+                    <#if messagesPerField.existsError('email')>
                         <span id="input-error-username" class="invalid-input" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('username'))?no_esc}
+                                    ${kcSanitize(messagesPerField.get('email'))?no_esc}
                         </span>
                     </#if>
                 </div>
