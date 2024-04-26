@@ -19,14 +19,16 @@
             <p class="p-forgot-password">Inserisci la mail associata al tuo account e riceverai un link per resettare la tua password</p>
                 <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-leading-icon ${properties.kcLabelClass!} <#if usernameEditDisabled??>mdc-text-field--disabled</#if>">
                     <label class="label-forgot-password" for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="${msg("Inserisci la tua email")}" class="input-forgot-password" autofocus value="${(auth.attemptedUsername!'')}" aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"/>
+                    <input type="text" id="email" class="input-forgot-password" placeholder="${msg("Email")}" name="email"
+                           value="${(auth.attemptedUsername!'')}"
+                           autocomplete="email"
+                           aria-invalid="<#if messagesPerField.existsError('email')>true</#if>">
                     <#if messagesPerField.existsError('email')>
                         <span id="input-error" class="invalid-input" aria-live="polite">
-                                    ${kcSanitize(messagesPerField.get('email'))?no_esc}
-                        </span>
+                                    ${kcSanitize(messagesPerField.getFirstError('email'))?no_esc}
+                            </span>
                     </#if>
                 </div>
-
             <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                 <button class="button-forgot-password" type="submit">
                     Invia
