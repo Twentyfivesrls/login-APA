@@ -35,8 +35,11 @@
     <#if section = "header">
     <#elseif section = "form">
         <div class="body-container">
-            <div class="center">
-                <img src="${url.resourcesPath}/img/Logo - Antica Pasticceria-05.svg" alt="Logo" rel="icon" width="300" height="80">
+            <div class="register-container">
+                <div class="register-logo">
+                    <img src="${url.resourcesPath}/img/Logo - Antica Pasticceria-05.svg" alt="Logo" rel="icon"
+                         width="300" height="80">
+                </div>
                 <form id="kc-register-form" class="form-container" action="${url.registrationAction}" method="post">
                     <h2>Registrazione</h2>
                     <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
