@@ -31,7 +31,7 @@
         }
     }
 </script>
-<@layout.registrationLayout displayMessage=!messagesPerField.existsError('firstName','lastName','email','username','password','password-confirm', 'phone'); section>
+<@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('email'); section>
     <#if section = "header">
     <#elseif section = "form">
         <div class="body-container">

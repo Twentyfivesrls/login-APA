@@ -93,6 +93,11 @@ label {
     font-family: 'Montserrat', sans-serif;
 }
 
+.input-forgot-password[aria-invalid="true"] {
+    border-color: red;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .button-login {
     width: 100%;
     padding: 10px;

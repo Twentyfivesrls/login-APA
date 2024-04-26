@@ -22,7 +22,7 @@
                     <input type="text" id="email" class="input-forgot-password" placeholder="${msg("Email")}" name="email"
                            value="${(auth.attemptedUsername!'')}"
                            autocomplete="email"
-                           aria-invalid="<#if messagesPerField.existsError('email')>true</#if>">
+                           aria-invalid="<#if messagesPerField.existsError('email')>true</#if>"/>
                     <#if messagesPerField.existsError('email')>
                         <span id="input-error" class="invalid-input" aria-live="polite">
                                     ${kcSanitize(messagesPerField.getFirstError('email'))?no_esc}
