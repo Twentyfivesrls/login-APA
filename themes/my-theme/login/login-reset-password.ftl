@@ -6,7 +6,7 @@
 </#if>
 
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayMessage=!messagesPerField.existsError('email'); section>
+<@layout.registrationLayout displayInfo=true displayMessage=!messagesPerField.existsError('email'); section>
     <#if section = "header">
     <#elseif section = "form">
         <div class="forgo-password-container">
